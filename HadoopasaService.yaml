@@ -114,6 +114,91 @@ paths:
           schema:
             $ref: '#/definitions/ComputeResponse'
        summary: ManageCompute
-    
-   
-      
+    /api/hadoop/ManageCluster:
+     post:
+      tags:
+      - HadoopAPI
+      operationId: HadopAPI_ManageCluster
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ManageClusterRequest'
+      responses:
+        '200': 
+          description: OK
+          schema:
+            $ref: '#/definitions/ManageClusterResponse'
+       summary: ManageCluster
+  /api/hadoop/ManageClusterFeatures:
+     post:
+      tags:
+      - HadoopAPI
+      operationId: HadopAPI_ManageClusterFeatures
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ClusterFeaturesRequest'
+      responses:
+        '200': 
+          description: OK
+          schema:
+            $ref: '#/definitions/ClusterFeaturesResponse'
+       summary: ManageClusterFeatures
+   definitions:
+      HadoopStorageRequest:
+        type: object
+        properties:
+          appId:
+            desscription: Application id of the requester app
+            type: string
+          prod:
+            description: Whether this is to store prod or non-prod data
+            type: boolean
+          storagespace:
+            description: The storage space required in GB
+            type: string
+          compute:
+            description: Compute capacity needed for the cluster
+            type: string
+          advisoryQuota:
+            description: Specify the storage utilization limit when alerts needs to be sent
+            type: string
+          entitlement:
+            description: Entitlements needed for the data
+            type: string
+        ServiceAccountsRequest:
+          type: object
+          properties:
+            clusterName: 
+              description: Name of the Hadoop cluster returned in request hadoop storage service
+              type: string
+            action:
+              description: Add / Delete
+              type: string
+            serviceAccounts:
+              description : Service account using which the application will interact with Hadoop system
+              type: string
+          UserRequest:
+            type: object
+            properties:
+              clusterName:
+                description: Name of the Hadoop cluster returned in request Hadoop Service
+                type: string
+              action:
+                description: Add / Delete
+                type: string
+              userAccounts:
+                description: List of users for whom HDFS access neds to be given
+                type: string
