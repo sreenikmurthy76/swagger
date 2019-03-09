@@ -51,7 +51,7 @@ paths:
           schema:
             $ref: '#/definitions/ServiceAccountsResponse'
        summary: ManageServiceAccounts
-    /api/hadoop/ManageUsers
+    /api/hadoop/ManageUsers:
      post:
       tags:
       - HadoopAPI
@@ -72,6 +72,48 @@ paths:
           schema:
             $ref: '#/definitions/UsersResponse'
        summary: ManageUsers
+    /api/hadoop/ManageStorage:
+     post:
+      tags:
+      - HadoopAPI
+      operationId: HadopAPI_ManageStorage
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/StorageRequest'
+      responses:
+        '200': 
+          description: OK
+          schema:
+            $ref: '#/definitions/StorageResponse'
+       summary: ManageStorage
+    /api/hadoop/ManageCompute:
+     post:
+      tags:
+      - HadoopAPI
+      operationId: HadopAPI_ManageCompute
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ComputeRequest'
+      responses:
+        '200': 
+          description: OK
+          schema:
+            $ref: '#/definitions/ComputeResponse'
+       summary: ManageCompute
     
    
       
