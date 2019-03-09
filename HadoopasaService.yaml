@@ -202,3 +202,47 @@ paths:
               userAccounts:
                 description: List of users for whom HDFS access neds to be given
                 type: string
+           StorageRequest:
+              type: object
+              properties:
+                clusterName: 
+                  description: Name of the Hadoop cluster
+                  type: string
+                action:
+                  description: Add / Delete
+                  type: string
+                storage:
+                  description: Storage needs to be added or removed
+                  type: string
+           ComputeRequest:
+              type: object
+              properties:
+                clusterName: 
+                  description: Name of the Hadoop cluster
+                  type: string
+                action:
+                  description: Add / Delete
+                  type: string
+                vCores:
+                  description: Number of V-cores to be added or removed
+                  type: string      
+                memory:
+                  description: Memory to be added / removed on the compute node
+                  type: string
+                disk:
+                  description: FAT and FAST disks to be added / removed to compute node
+                  type: string
+            ManageClusterRequest:
+                type: object
+                properties:
+                  clusterName:
+                    description: Name of of the Hadoop Cluster
+                    type: string
+                  maintenanceAction:
+                    description: Delete / Delete All
+                    type: string
+                  folders:
+                    description: List of folders to delete
+                    type: array
+                    items:
+                      type: string
