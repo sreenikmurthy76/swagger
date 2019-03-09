@@ -22,6 +22,56 @@ paths:
       - name: req
         in: body
         required: true
-        scheme:
+        schema:
           $ref: '#/definitions/HadoopStorageRequest'
+      responses:
+        '200': 
+          description: OK
+          schema:
+            $ref: '#/definitions/HadoopStorageResponse'
+       summary: RequestHadoopStorage
+   /api/hadoop/ManageServiceAccounts:
+    post:
+      tags:
+      - HadoopAPI
+      operationId: HadopAPI_ManageServiceAccounts
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ServiceAccountsRequest'
+      responses:
+        '200': 
+          description: OK
+          schema:
+            $ref: '#/definitions/ServiceAccountsResponse'
+       summary: ManageServiceAccounts
+    /api/hadoop/ManageUsers
+     post:
+      tags:
+      - HadoopAPI
+      operationId: HadopAPI_ManageUsers
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UsersRequest'
+      responses:
+        '200': 
+          description: OK
+          schema:
+            $ref: '#/definitions/UsersResponse'
+       summary: ManageUsers
+    
+   
       
