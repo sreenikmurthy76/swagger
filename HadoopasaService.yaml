@@ -338,6 +338,36 @@ paths:
                           type: string
                    ManageClusterResponse:
                       type: object
+                      properties:
+                        status: 
+                          description: Success or Failure
+                          type: string
+                        folders:
+                          description: List of folders deleted:
+                          type: array
+                          items: 
+                            type: string
+                    ClusterFeaturesResponse:
+                      type: object
+                      properties:
+                        status: 
+                          description: Success or Failure
+                          type: string
+                        requestType:
+                          description: Add / Modify /Delete
+                          type: string
+                        Features:
+                          description: List of features enabled or disabled
+                          type: array
+                          items:
+                            type: string
+                 securityDefinitions:
+                    default:
+                      type: oauth2
+                      authorizationUrl: https://hadoopasaservice/authrize
+                      flow: implicit
+                      scopes: {
+                      }
                       
                     
                    
