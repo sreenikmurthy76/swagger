@@ -246,3 +246,59 @@ paths:
                     type: array
                     items:
                       type: string
+             ClusterFeaturesRequest:
+                  type: object
+                  properties:
+                    clusterName: 
+                      description: Name of the Hadoop Cluster
+                      type: string
+                    requestType:
+                      description: Add / Modify / Delete
+                      type: string
+                    timePeriod:
+                      description: Period until when the feature needs to be available
+                      format: data-time
+                      type: string
+                    features:
+                      description: List of features which needs to be enables or disabled.
+                      Logging
+                      Job Scheduling
+                      Real-time message consumption
+                      BCP replication
+                      Performance tuning
+                      type: array
+                      items: 
+                        type: string
+                    additionalDetails:
+                      description: Any additional details related to features being requested.
+                      type: string
+               HadoopStorageResponse:
+                  type: object
+                  properties:
+                    clusterName:
+                      description: Name of the Hadoop cluster
+                      type: string
+                    folderStructure:
+                      description: The folder structure created in Hadoop Cluster for the requester
+                      type: string
+                    entitlements: 
+                      description: The entitlements provided for authorization purposes
+                      type: string
+                    edgeNode:
+                      description: Information on the edge node
+                      type: string
+                    storage:
+                      description: Storage space allocated. 1 TB by default
+                      type: string
+                    vCores:
+                      description: Number of v-cores allocated for the application
+                      type: string
+                    yarnQueue:
+                      description: Yarn queue name allocated
+                      type: string
+                      
+                    
+                   
+                      
+                     
+                      
