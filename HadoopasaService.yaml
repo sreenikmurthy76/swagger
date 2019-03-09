@@ -1,0 +1,27 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: HadoopAsAService
+  description: 'This service can be used to request for Hadoop storage along with facilities for data processing, reporting, monitoring and controls.'
+host: newhadoopcluster.com:8343
+basePath: /hadoopApi/v1
+schemes:
+- https
+- http
+paths:
+  /api/hadoop/RequestHadoopStorage:
+    post:
+      tags:
+      - HadoopAPI
+      operationId: HadopAPI_RequestHadoopStorage
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: req
+        in: body
+        required: true
+        scheme:
+          $ref: '#/definitions/HadoopStorageRequest'
+      
