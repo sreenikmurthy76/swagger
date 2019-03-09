@@ -296,6 +296,48 @@ paths:
                     yarnQueue:
                       description: Yarn queue name allocated
                       type: string
+                 ServiceAccountsResponse:
+                    type: object
+                    properties:
+                      status:
+                        description: Success or Failure
+                        type: string
+                      serviceAccounts:
+                        description: List of service accounts added
+                        type: array
+                        items: 
+                            type: string
+                  UsersResponse:
+                      type: object
+                      properties: 
+                        status:
+                          description: Success or Failure
+                          type: string
+                        userList:
+                          description: List of users added
+                          type: array
+                          items:
+                            type: string
+                  StorageResponse:
+                      type: object
+                      properties:
+                        status:
+                          description: Success or Failure
+                          type: string
+                        storage:
+                          description: Storage added to the cluster
+                          type: string
+                   ComputeResponse:
+                      type: object
+                      properties:
+                        status:
+                          description: Success of Failure
+                          type: string
+                        compute:
+                          description: V-cores, memory and disk added to the compute
+                          type: string
+                   ManageClusterResponse:
+                      type: object
                       
                     
                    
